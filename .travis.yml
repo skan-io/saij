@@ -1,0 +1,33 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  # TODO: upgrade to Node 10
+  - '9'
+
+# main CI script
+script:
+  - npm run ci
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+
+# Greenkeeper needs to understand lock files
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+
+before_install:
+# package-lock.json was introduced in npm@5
+- '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+- npm install -g greenkeeper-lockfile
+
+# Publishing scripts
+after_success:
+  - $TRAVIS_BUILD_DIR/config/scripts/release.sh
+
+# Don't build release tagged branches
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

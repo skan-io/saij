@@ -1,0 +1,78 @@
+{
+  "name": "saij",
+  "version": "1.0.0",
+  "description": "A learning engine.",
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "scripts": {
+    "ci": "run-s -s clean test build",
+    "clean": "rimraf ./build",
+    "clean:docs": "rimraf ./docs",
+    "docs": "run-s -s clean:docs build:docs",
+    "build": "run-s -s clean:* build:*",
+    "build:docs": "jsdoc config/jsdoc/api/index.md -c config/jsdoc/api/conf.json -P package.json -d docs",
+    "build:pkg": "babel src/saij --out-dir build/saij --ignore '**/*.test.js'",
+    "git": "git add -A && git-cz && git push origin HEAD -u",
+    "jest": "jest --config ./jest.config.json --verbose --runInBand --no-cache",
+    "jest:watch": "jest --config ./jest.config.json --runInBand --no-cache --watchAll",
+    "lint": "run-s -s lint:*",
+    "lint:js": "eslint --report-unused-disable-directives --ignore-path .gitignore src",
+    "lint:md": "remark --no-stdout --use remark-lint *.md",
+    "preci": "npm --loglevel=warn install",
+    "semantic-release": "semantic-release",
+    "test": "run-s -s lint jest",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skan-io/saij.git"
+  },
+  "keywords": [
+    "AI",
+    "ML",
+    "Machine",
+    "Learning"
+  ],
+  "author": "Nick Manks",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/skan-io/saij/issues"
+  },
+  "homepage": "https://github.com/skan-io/saij#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.55",
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/node": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0-beta.55",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.55",
+    "@babel/polyfill": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.0.0-beta.55",
+    "@babel/runtime": "^7.0.0-beta.55",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.2.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "jest-cli": "^23.4.2",
+    "jsdoc": "^3.5.5",
+    "npm-run-all": "^4.1.3",
+    "remark-cli": "5.0.0",
+    "remark-lint": "^6.0.2",
+    "remark-preset-lint-recommended": "3.0.2",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^15.9.3",
+    "sinon": "6.1.4",
+    "travis-deploy-once": "^5.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
