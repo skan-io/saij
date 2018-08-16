@@ -1,32 +1,32 @@
 {
   "name": "saij",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "A learning engine.",
   "engines": {
     "node": ">=9.0.0"
   },
   "scripts": {
-    "ci": "run-s -s clean test build",
+    "ci": "run-s -s test build",
     "clean": "rimraf ./build",
     "clean:docs": "rimraf ./docs",
     "docs": "run-s -s clean:docs build:docs",
     "build": "run-s -s clean:* build:*",
     "build:docs": "jsdoc config/jsdoc/api/index.md -c config/jsdoc/api/conf.json -P package.json -d docs",
-    "build:pkg": "babel src/saij --out-dir build/saij --ignore '**/*.test.js'",
+    "build:pkg": "babel src/saij --out-dir build/pkg --ignore '**/*.test.js'",
+    "build:files": "cp ./package.json build/pkg/ && cp ./README.md build/pkg/ && cp ./LICENSE build/pkg/",
     "git": "git add -A && git-cz && git push origin HEAD -u",
     "jest": "jest --config ./jest.config.json --verbose --runInBand --no-cache",
-    "jest:watch": "jest --config ./jest.config.json --runInBand --no-cache --watchAll",
     "lint": "run-s -s lint:*",
     "lint:js": "eslint --report-unused-disable-directives --ignore-path .gitignore src",
     "lint:md": "remark --no-stdout --use remark-lint *.md",
     "preci": "npm --loglevel=warn install",
+    "release": "run-s -s build semantic-release",
     "semantic-release": "semantic-release",
-    "test": "run-s -s lint jest",
-    "travis-deploy-once": "travis-deploy-once"
+    "test": "run-s -s lint jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/skan-io/saij.git"
+    "url": "git@github.com:skan-io/saij.git"
   },
   "keywords": [
     "AI",
@@ -41,17 +41,19 @@
   },
   "homepage": "https://github.com/skan-io/saij#readme",
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.55",
-    "@babel/core": "^7.0.0-beta.55",
-    "@babel/node": "^7.0.0-beta.55",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.55",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0-beta.55",
-    "@babel/plugin-proposal-optional-catch-binding": "^7.0.0-beta.55",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0-beta.55",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.55",
-    "@babel/polyfill": "^7.0.0-beta.55",
-    "@babel/preset-env": "^7.0.0-beta.55",
-    "@babel/runtime": "^7.0.0-beta.55",
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/node": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-decorators": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0-rc.1",
+    "@babel/plugin-transform-runtime": "^7.0.0-rc.1",
+    "@babel/polyfill": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
+    "@babel/runtime": "^7.0.0-rc.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
@@ -67,8 +69,7 @@
     "remark-preset-lint-recommended": "3.0.2",
     "rimraf": "^2.6.2",
     "semantic-release": "^15.9.3",
-    "sinon": "6.1.5",
-    "travis-deploy-once": "^5.0.1"
+    "sinon": "6.1.5"
   },
   "config": {
     "commitizen": {

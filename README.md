@@ -59,7 +59,7 @@ A modular Javascript machine learning and artificial intelligence SDK.
 npm install saij
 ```
 
-## Usage & API
+## Usage & API - WIP
 
 Basic `Engine` example:
 
@@ -83,7 +83,7 @@ engine.start();
 
 See __Saij__ in action at [https://apps.saij.io](https://apps.saij.io).
 
-## Testing
+## Testing & Linting
 
 To run all unit tests use:
 
@@ -97,7 +97,19 @@ To run a single test use:
 npm run jest src/saij/file-to-test
 ```
 
-All tests must pass 100% coverage (and all use cases) before a merge to master.
+> All tests must pass 100% coverage (and all use cases) before a merge to master.
+
+Check coverage after a test using:
+
+```bash
+open build/cov/lcov-report/index.html
+```
+
+Check your code style using [eslint](https://eslint.org/):
+
+```bash
+npm run lint
+```
 
 ## Build & Package
 
@@ -107,9 +119,9 @@ To build the project use:
 npm run build
 ```
 
-Built files will be output to [`build/saij`](./build/saij).
+Built files will be output to [`build/pkg`](./build/pkg).
 
-Package will be automatically published to [NPM](https://www.npmjs.com/package/saij) once it has passed CI (Travis), semantic versioning and it must be successfully merged into master.
+Package will be automatically published to [NPM](https://www.npmjs.com/package/saij) once it has passed CI ([Travis](https://travis-ci.com/skan-io/saij/)), semantic versioning and it must be successfully merged into master.
 
 ## Documentation
 
