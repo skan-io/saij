@@ -10,7 +10,7 @@ Please use the [GitHub issue tracker](https://github.com/skan-io/saij/issues). B
 
 ## Contributing Code
 
-Follow the Angular commit message guidelines when committing code, or use the provided `npm run git` command to run [_commitizen_](https://github.com/commitizen/cz-cli) commits.
+Follow [these commit message guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) when committing code, or use the provided `npm run git` which uses [_commitizen_](https://github.com/commitizen/cz-cli) to write commit messages and push your code.
 
 Make sure that your pull request follows our pull request guidelines below before submitting it.
 
@@ -30,20 +30,13 @@ Your pull request must:
 
     - Follow Saij's coding style.
 
-    - Pass the integration tests run automatically by the Travis Continuous
-   Integration system.
+    - Pass the unit tests, 100% coverage and Travis CI.
 
     - Address a single issue or add a single item of functionality.
 
     - Use clear commit messages in Angular standard.
 
     - Be possible to merge automatically.
-
-
-### Address a single issue or add a single item of functionality
-
-Please submit separate pull requests for separate issues.  This allows each to
-be reviewed on its own merits.
 
 
 ### Use clear commit messages
