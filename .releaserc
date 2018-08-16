@@ -1,5 +1,5 @@
 {
-  "branch": "master",
+  "branch": "setup-release",
   "dryRun": true,
   "debug": true,
   "pkgRoot": "build/pkg"
