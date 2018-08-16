@@ -127,7 +127,7 @@ Or you can rebuild the docs:
 
 ```bash
 npm run docs
-server ./docs
+serve ./docs
 ```
 
 ## Maintainers
