@@ -8,24 +8,33 @@ node_js:
   # TODO: upgrade to Node 10
   - '9'
 
-# main CI script
-script:
-  - npm run ci
-  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+jobs:
+  include:
+    # Testing job
+    - stage: test
+      before_install:
+      # package-lock.json was introduced in npm@5
+      - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+      - npm install -g greenkeeper-lockfile
+      # Greenkeeper needs to understand lock files
+      before_script: greenkeeper-lockfile-update
+      # main CI script
+      script:
+        - npm run ci
+        - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+        - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+      after_script: greenkeeper-lockfile-upload
+    # Publishing job
+    - stage: publish
+      if: branch = master
+      script: npm run release
 
-# Greenkeeper needs to understand lock files
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
+      # If you want push back use this..
+      # It will require master branch to be unprotected
+      # or admin-only push access
+      # after_success:
+      #   - $TRAVIS_BUILD_DIR/config/scripts/release.sh
 
-before_install:
-# package-lock.json was introduced in npm@5
-- '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
-- npm install -g greenkeeper-lockfile
-
-# Publishing scripts
-after_success:
-  - $TRAVIS_BUILD_DIR/config/scripts/release.sh
 
 # Don't build release tagged branches
 branches:
