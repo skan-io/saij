@@ -34,9 +34,3 @@ jobs:
       # or admin-only push access
       # after_success:
       #   - $TRAVIS_BUILD_DIR/config/scripts/release.sh
-
-
-# Don't build release tagged branches
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
