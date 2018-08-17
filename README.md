@@ -65,17 +65,34 @@ Basic `Engine` example:
 
 ```javascript
 import Engine from 'saij/Engine';
-import Interpreter from 'saij/Interpreter';
-import Analyser from 'saij/Analyser';
-import Reactor from 'saij/Reactor';
+import Organ from 'saij/Organ';
+import Layer from 'saij/Layer';
+import Group from 'saij/Group';
+import NeuralNet from 'saij/NeuralNet';
+import Request from 'saij/Request';
 
-const engine = new Engine({...options});
 
-engine.createPipeline(
-  new Interpreter(),
-  new Analyser(),
-  new Reactor()
-);
+const organA = new Organ({
+  layers: [
+    new Layer({
+      source: new NeuralNet({
+        type: 'LSTM', architecture: [1, 3, 1]
+      })
+    })
+  ]
+});
+const organB = new Organ({
+  layers: [
+    new Layer({
+      source: new Request('www.some-url.com/stuff')
+    })
+  ]
+});
+
+const organGroup = new Group([organA, organB]);
+
+const engine = new Engine([organGroup]);
+
 engine.setTarget('my-html-element');
 engine.setInputTarget('my-input-html-element');
 engine.start();
