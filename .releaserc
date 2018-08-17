@@ -1,6 +1,5 @@
 {
   "branch": "master",
   "debug": true,
-  "noCi": true,
   "pkgRoot": "build/pkg"
 }
