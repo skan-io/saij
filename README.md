@@ -11,7 +11,7 @@
 <p align="center">
   <a><img src="https://img.shields.io/badge/release-alpha-yellow.svg?style=flat-square" alt="Build Status"></a>
   <a><img src="https://img.shields.io/badge/coverage-100%25-green.svg?style=flat-square" alt="Build Status"></a>
-  <a><img src="https://img.shields.io/travis-ci/skan-io/saij.svg?style=flat-square" alt="Build Status"></a>
+  <a><img src="https://img.shields.io/travis/com/skan-io/saij/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/skan-io/saij.svg?style=flat-square"></a>
   <a><img src="https://img.shields.io/badge/linter-eslint-ff69b4.svg?style=flat-square" alt="code style: prettier"></a>
   <a><img src="https://img.shields.io/badge/docs-v1.0.0-blue.svg?style=flat-square"></a>
@@ -65,17 +65,34 @@ Basic `Engine` example:
 
 ```javascript
 import Engine from 'saij/Engine';
-import Interpreter from 'saij/Interpreter';
-import Analyser from 'saij/Analyser';
-import Reactor from 'saij/Reactor';
+import Organ from 'saij/Organ';
+import Layer from 'saij/Layer';
+import Group from 'saij/Group';
+import NeuralNet from 'saij/NeuralNet';
+import Request from 'saij/Request';
 
-const engine = new Engine({...options});
 
-engine.createPipeline(
-  new Interpreter(),
-  new Analyser(),
-  new Reactor()
-);
+const organA = new Organ({
+  layers: [
+    new Layer({
+      source: new NeuralNet({
+        type: 'LSTM', architecture: [1, 3, 1]
+      })
+    })
+  ]
+});
+const organB = new Organ({
+  layers: [
+    new Layer({
+      source: new Request('www.some-url.com/stuff')
+    })
+  ]
+});
+
+const organGroup = new Group([organA, organB]);
+
+const engine = new Engine([organGroup]);
+
 engine.setTarget('my-html-element');
 engine.setInputTarget('my-input-html-element');
 engine.start();
