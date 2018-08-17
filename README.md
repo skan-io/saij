@@ -11,7 +11,7 @@
 <p align="center">
   <a><img src="https://img.shields.io/badge/release-alpha-yellow.svg?style=flat-square" alt="Build Status"></a>
   <a><img src="https://img.shields.io/badge/coverage-100%25-green.svg?style=flat-square" alt="Build Status"></a>
-  <a><img src="https://img.shields.io/travis-ci/skan-io/saij.svg?style=flat-square" alt="Build Status"></a>
+  <a><img src="https://img.shields.io/travis/com/skan-io/saij/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/skan-io/saij.svg?style=flat-square"></a>
   <a><img src="https://img.shields.io/badge/linter-eslint-ff69b4.svg?style=flat-square" alt="code style: prettier"></a>
   <a><img src="https://img.shields.io/badge/docs-v1.0.0-blue.svg?style=flat-square"></a>
