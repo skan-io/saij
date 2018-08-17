@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Saij 0.0.0-semantically-released API - Class: Event</title>
+    <title>Saij 0.0.0-semantically-released API - Class: Connector</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -641,7 +641,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="module-saij_core_Event-Event.html">Class: Event</h1>
+        <h1 class="page-title" data-filename="module-saij_Connection-Connector.html">Class: Connector</h1>
         <div id="latest-check" class="alert alert-warning alert-dismissible" role="alert" style="display:none">
           <button id="latest-dismiss" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           This documentation is for Skan.io Saij v<span id="package-version">0.0.0-semantically-released</span>. The <a id="latest-link" href="#" class="alert-link">latest</a> is v<span id="latest-version"></span>.
@@ -654,17 +654,17 @@
 
 <header>
     <h2>
-        <span class="ancestors"><a href="module-saij_core_Event.html">saij/core/Event</a>~</span>Event
+        <span class="ancestors"><a href="module-saij_Connection.html">saij/Connection</a>.</span>Connector
     </h2>
     <br>
     
+    <pre class="prettyprint source"><code>import Connector from '<a href="module-saij_Connection.html">saij/Connection</a>';</code></pre>
     
-        <div class="class-description"><p>Stripped down implementation of the W3C DOM Level 2 Event interface.
-See https://<a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-interface">www.w3.org/TR/DOM-Level-2-Events/events.html#Events-interface</a>.</p>
-<p>This implementation only provides <code>type</code> and <code>target</code> properties, and
-<code>stopPropagation</code> and <code>preventDefault</code> methods. It is meant as base class
-for higher level events defined in the library, and works with
-<a href="module-saij_core_Target-Target.html"><code>module:saij/core/Target~Target</code></a>.</p></div>
+    
+        <div class="class-description"><p>A connector is a helper class, that you can instantiate with a key generating
+function, that when <code>connect</code> is called between two
+<a href="module-saij_Connection.html#~Connectable"><code>module:saij/Connection~Connectable</code></a>s, a key will be created and a
+new <a href="module-saij_Connection-Connection.html"><code>module:saij/Connection~Connection</code></a> will be returned.</p></div>
     
 </header>
 
@@ -677,149 +677,90 @@ for higher level events defined in the library, and works with
 <dt class="">
     <div class="nameContainer">
         
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt class="">
-    <div class="nameContainer">
-        <div class="anchor" id="target">
+        <div class="anchor" id="Connector">
         </div>
         <h4 class="name">
-            target<span class="type-signature type object">{Object}</span> 
+            new module:saij/Connection~Connector<span class="signature">(keyFunction)</span>
+            
             
 
         </h4>
-    </div>
-    
-</dt>
-<dd class="">
-    
-    <div class="description">
-        <p>The event target.</p>
-    </div>
-    
-    
-    
-<dl class="details">
-    
         
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt class="">
-    <div class="nameContainer">
-        <div class="anchor" id="type">
+        <div class="tag-source">
+            src/saij/Connection.js, line 193
         </div>
-        <h4 class="name">
-            type<span class="type-signature type string">{string}</span> 
-            
-
-        </h4>
+        
+        
     </div>
     
 </dt>
 <dd class="">
+
     
     <div class="description">
-        <p>The event type.</p>
+        <p>Create the Connector class with a function that will take two
+<a href="module-saij_Connection.html#~Connectable"><code>module:saij/Connection~Connectable</code></a>s and create a key from them.</p>
+<pre class="prettyprint source"><code>const keyFunction = (conA, conB)=> `${conA.getName()}:${conB.getName()}`
+const connector = new Connector(keyFunction);
+const connection = connector.connect(conA, conB);</code></pre>
     </div>
     
+
     
+
+    
+
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>keyFunction</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>key creating function</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+
     
 <dl class="details">
     
@@ -845,11 +786,37 @@ for higher level events defined in the library, and works with
     
 </dl>
 
+
     
+
+    
+
+    
+
+    
+
+    
+
     
 </dd>
 
-        </dl>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -860,17 +827,17 @@ for higher level events defined in the library, and works with
 <dt class="">
     <div class="nameContainer">
         
-        <div class="anchor" id="preventDefault">
+        <div class="anchor" id="connect">
         </div>
         <h4 class="name">
-            preventDefault<span class="signature">()</span>
+            connect<span class="signature">(conA, conB)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="module-saij_Connection-Connection.html">module:saij/Connection~Connection</a>}</span>
             
             
 
         </h4>
         
         <div class="tag-source">
-            src/saij/core/Event.js, line 47
+            src/saij/Connection.js, line 216
         </div>
         
         
@@ -881,7 +848,7 @@ for higher level events defined in the library, and works with
 
     
     <div class="description">
-        <p>Stop event propagation.</p>
+        <p>Get the listeners keys for all the input/output listeners.</p>
     </div>
     
 
@@ -890,6 +857,178 @@ for higher level events defined in the library, and works with
     
 
     
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conA</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-saij_Connection.html#~Connectable">module:saij/Connection~Connectable</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>connection A</p></td>
+        </tr>
+	
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conB</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-saij_Connection.html#~Connectable">module:saij/Connection~Connectable</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>connection B</p></td>
+        </tr>
+	
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conA.getInput</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conA.getOutput</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conB.getInput</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>conB.getOutput</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
     
     
 
@@ -928,81 +1067,13 @@ for higher level events defined in the library, and works with
     
 
     
-
-    
-</dd>
-
-        
-            
-<dt class="">
-    <div class="nameContainer">
-        
-        <div class="anchor" id="stopPropagation">
-        </div>
-        <h4 class="name">
-            stopPropagation<span class="signature">()</span>
-            
-            
-
-        </h4>
-        
-        <div class="tag-source">
-            src/saij/core/Event.js, line 56
-        </div>
-        
-        
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-    <div class="description">
-        <p>Stop event propagation.</p>
-    </div>
-    
-
-    
-
-    
-
-    
     
     
 
-    
-<dl class="details">
-    
-        
-    
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
+<h5>Returns:</h5>
+new connection
+<br />
 
     
 
@@ -1014,87 +1085,6 @@ for higher level events defined in the library, and works with
 
     
 
-    
-        <h3 class="subsection-title">Events</h3>
-
-        <dl>
-            
-<dt class="">
-    <div class="nameContainer">
-        
-        <div class="anchor" id="event:change">
-        </div>
-        <h4 class="name">
-            change
-            
-            
-
-        </h4>
-        
-        <div class="tag-source">
-            src/saij/core/EventType.js, line 10
-        </div>
-        
-        
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-    <div class="description">
-        <p>Generic change event. Triggered when the revision counter is increased.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
     
 </article>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Saij 0.0.0-semantically-released API - Class: Event</title>
+    <title>Saij 0.0.0-semantically-released API - Module: saij/Connection</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -641,7 +641,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="module-saij_core_Event-Event.html">Class: Event</h1>
+        <h1 class="page-title" data-filename="module-saij_Connection.html">Module: saij/Connection</h1>
         <div id="latest-check" class="alert alert-warning alert-dismissible" role="alert" style="display:none">
           <button id="latest-dismiss" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           This documentation is for Skan.io Saij v<span id="package-version">0.0.0-semantically-released</span>. The <a id="latest-link" href="#" class="alert-link">latest</a> is v<span id="latest-version"></span>.
@@ -653,18 +653,10 @@
 <section>
 
 <header>
-    <h2>
-        <span class="ancestors"><a href="module-saij_core_Event.html">saij/core/Event</a>~</span>Event
+    <h2>saij/Connection
     </h2>
     <br>
     
-    
-        <div class="class-description"><p>Stripped down implementation of the W3C DOM Level 2 Event interface.
-See https://<a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-interface">www.w3.org/TR/DOM-Level-2-Events/events.html#Events-interface</a>.</p>
-<p>This implementation only provides <code>type</code> and <code>target</code> properties, and
-<code>stopPropagation</code> and <code>preventDefault</code> methods. It is meant as base class
-for higher level events defined in the library, and works with
-<a href="module-saij_core_Target-Target.html"><code>module:saij/core/Target~Target</code></a>.</p></div>
     
 </header>
 
@@ -674,23 +666,8 @@ for higher level events defined in the library, and works with
 
     
         
-<dt class="">
-    <div class="nameContainer">
+
         
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-
-    
-
-    
-
-    
-
-    
 <dl class="details">
     
         
@@ -716,19 +693,7 @@ for higher level events defined in the library, and works with
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
+        
     
     </div>
 
@@ -741,322 +706,126 @@ for higher level events defined in the library, and works with
     
 
     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
+        <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            
-<dt class="">
-    <div class="nameContainer">
-        <div class="anchor" id="target">
-        </div>
-        <h4 class="name">
-            target<span class="type-signature type object">{Object}</span> 
-            
-
-        </h4>
-    </div>
-    
-</dt>
-<dd class="">
-    
-    <div class="description">
-        <p>The event target.</p>
-    </div>
-    
-    
-    
-<dl class="details">
-    
+            <dt><a href="module-saij_Connection-Connection.html">Connection</a></dt>
+            <dd></dd>
         
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt class="">
-    <div class="nameContainer">
-        <div class="anchor" id="type">
-        </div>
-        <h4 class="name">
-            type<span class="type-signature type string">{string}</span> 
-            
-
-        </h4>
-    </div>
-    
-</dt>
-<dd class="">
-    
-    <div class="description">
-        <p>The event type.</p>
-    </div>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<dt class="">
-    <div class="nameContainer">
-        
-        <div class="anchor" id="preventDefault">
-        </div>
-        <h4 class="name">
-            preventDefault<span class="signature">()</span>
-            
-            
-
-        </h4>
-        
-        <div class="tag-source">
-            src/saij/core/Event.js, line 47
-        </div>
-        
-        
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-    <div class="description">
-        <p>Stop event propagation.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt class="">
-    <div class="nameContainer">
-        
-        <div class="anchor" id="stopPropagation">
-        </div>
-        <h4 class="name">
-            stopPropagation<span class="signature">()</span>
-            
-            
-
-        </h4>
-        
-        <div class="tag-source">
-            src/saij/core/Event.js, line 56
-        </div>
-        
-        
-    </div>
-    
-</dt>
-<dd class="">
-
-    
-    <div class="description">
-        <p>Stop event propagation.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
+            <dt><a href="module-saij_Connection-Connector.html">Connector</a></dt>
+            <dd></dd>
         </dl>
     
 
     
 
     
-        <h3 class="subsection-title">Events</h3>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
 
         <dl>
-            
+                
 <dt class="">
     <div class="nameContainer">
-        
-        <div class="anchor" id="event:change">
+        <div class="anchor" id="~Connectable">
         </div>
         <h4 class="name">
-            change
-            
+            Connectable<span class="type-signature type module:saij/core/object~baseobject">{<a href="module-saij_core_Object-BaseObject.html">module:saij/core/Object~BaseObject</a>}</span> 
             
 
         </h4>
-        
-        <div class="tag-source">
-            src/saij/core/EventType.js, line 10
-        </div>
-        
-        
     </div>
     
 </dt>
 <dd class="">
-
     
     <div class="description">
-        <p>Generic change event. Triggered when the revision counter is increased.</p>
+        <p>Object requirements for use with this connection object. Must contains the
+<code>getInput</code> and <code>getOuput</code> functions, that must return <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a>.</p>
     </div>
     
-
     
-
-    
-
-    
-    
-    
-
     
 <dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>getInput</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>getOutput</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
     
         
     
@@ -1080,21 +849,116 @@ for higher level events defined in the library, and works with
     
 </dl>
 
-
     
-
-    
-
-    
-
-    
-
-    
-
     
 </dd>
 
-        </dl>
+            
+                
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="~ConnectionKey">
+        </div>
+        <h4 class="name">
+            ConnectionKey<span class="type-signature type string">{string}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>Key to use with <a href="module-saij_Connection-Connection.html"><code>module:saij/Connection~Connection</code></a> or the
+<code>module:saij/Engine~Engine#removeConnectionByKey</code> and
+<code>module:saij/Engine~Engine#getConnectionByKey</code> functions.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+            </dl>
+    
+
     
 </article>
 
