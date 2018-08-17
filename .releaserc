@@ -1,5 +1,5 @@
 {
-  "branch": "release-fixes-2",
+  "branch": "master",
   "debug": true,
   "noCi": true,
   "pkgRoot": "build/pkg"

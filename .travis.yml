@@ -24,7 +24,7 @@ jobs:
       after_script: greenkeeper-lockfile-upload
     # Publishing job
     - stage: publish
-      if: branch = release-fixes-2
+      if: branch = master
       script: npm run release
 
       # If you want push back use this..
