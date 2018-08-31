@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Saij 0.0.0-semantically-released API - Module: saij/core/AssertionError</title>
+    <title>Saij 0.0.0-semantically-released API - Module: saij/connection/Connection</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -721,7 +721,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="module-saij_core_AssertionError.html">Module: saij/core/AssertionError</h1>
+        <h1 class="page-title" data-filename="module-saij_connection_Connection.html">Module: saij/connection/Connection</h1>
         <div id="latest-check" class="alert alert-warning alert-dismissible" role="alert" style="display:none">
           <button id="latest-dismiss" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           This documentation is for Skan.io Saij v<span id="package-version">0.0.0-semantically-released</span>. The <a id="latest-link" href="#" class="alert-link">latest</a> is v<span id="latest-version"></span>.
@@ -733,7 +733,7 @@
 <section>
 
 <header>
-    <h2>saij/core/AssertionError
+    <h2>saij/connection/Connection
     </h2>
     <br>
     
@@ -789,7 +789,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="module-saij_core_AssertionError-AssertionError.html">AssertionError</a></dt>
+            <dt><a href="module-saij_connection_Connection-Connection.html">Connection</a></dt>
             <dd></dd>
         </dl>
     
@@ -801,7 +801,500 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
 
+        <dl>
+            
+<dt class="">
+    <div class="nameContainer">
+        
+        <div class="anchor" id=".assertConnectable">
+        </div>
+        <h4 class="name">
+            module:saij/connection/Connection~assertConnectable<span class="signature">(obj)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Boolean}</span>
+            
+            
+
+        </h4>
+        
+        <div class="tag-source">
+            src/saij/connection/Connection.js, line 51
+        </div>
+        
+        
+    </div>
+    
+</dt>
+<dd class="">
+
+    
+    <div class="description">
+        <p>Determine if an object is connectable.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>object to check if Connectable</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+<h5>Returns:</h5>
+true if object is Connectable
+<br />
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="~Connectable">
+        </div>
+        <h4 class="name">
+            Connectable<span class="type-signature type object">{Object}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>Object requirements for use with this connection object. Must contains the
+<code>getInput</code> and <code>getOuput</code> functions, that must return <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a>.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>getInput</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>getOutput</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>returns <a href="module-saij_core_Object-BaseObject.html"><code>module:saij/core/Object~BaseObject</code></a></p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+            
+                
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="~ConnectionKey">
+        </div>
+        <h4 class="name">
+            ConnectionKey<span class="type-signature type object">{Object}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>Key created when a new <a href="module-saij_connection_Connection-Connection.html"><code>module:saij/connection/Connection~Connection</code></a>
+is created.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-saij_connection_ConnectionType.html">module:saij/connection/ConnectionType</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+            
+                
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="~ConnectionType">
+        </div>
+        <h4 class="name">
+            ConnectionType<span class="type-signature type module:saij/connection/connectiontype">{<a href="module-saij_connection_ConnectionType.html">module:saij/connection/ConnectionType</a>}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>A <a href="module-saij_connection_Connection-Connection.html"><code>module:saij/connection/Connection~Connection</code></a> will be one of the
+<a href="module-saij_connection_ConnectionType.html"><code>module:saij/connection/ConnectionType</code></a>s.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-saij_connection_ConnectionType.html">module:saij/connection/ConnectionType</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+            </dl>
     
 
     
