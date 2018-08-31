@@ -3,7 +3,7 @@
  * @module saij/core/AssertionError
  */
 import {VERSION} from './utils/uid.js';
-import Errors from './errors';
+import Errors from './Errors';
 
 
 const link = 'Assertion failed. See https://skan-io.github.io/saij/module-saij_core_Errors for details.';

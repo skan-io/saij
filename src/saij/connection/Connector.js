@@ -6,7 +6,7 @@ import BaseObject from '../core/Object';
 import AssertionError from '../core/AssertionError';
 import Connection from './Connection';
 import ConnectionType from './ConnectionType';
-import Errors from '../core/errors';
+import Errors from '../core/Errors';
 
 
 /* eslint max-len: 0 */

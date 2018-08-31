@@ -5,7 +5,7 @@
 import BaseObject from '../core/Object';
 import Collection from '../core/Collection';
 import AssertionError from '../core/AssertionError';
-import Errors from '../core/errors';
+import Errors from '../core/Errors';
 import {unByKey} from '../core/Observable';
 import ConnectionType from './ConnectionType';
 
