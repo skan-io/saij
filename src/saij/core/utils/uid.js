@@ -27,4 +27,4 @@ export function getUid(obj) {
  * Saij version.
  * @type {string}
  */
-export const VERSION = 'latest';
+export const VERSION = '1.0.2';
