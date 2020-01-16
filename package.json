@@ -69,7 +69,7 @@
     "remark-preset-lint-recommended": "3.0.2",
     "rimraf": "^2.6.2",
     "semantic-release": "^15.9.3",
-    "sinon": "6.1.5"
+    "sinon": "8.1.0"
   },
   "config": {
     "commitizen": {
